@@ -1,0 +1,127 @@
+import React from "react";
+import { Element } from "react-scroll";
+import { useEffect, useState } from "react";
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaGitAlt,
+  FaGithub,
+  FaPython,
+} from "react-icons/fa";
+import {
+  SiMongodb,
+  SiTailwindcss,
+  SiCplusplus,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiFramer,
+  SiPostman,
+  SiVite,
+  SiNodemon,
+  SiExpress,
+  SiMongoose,
+  SiNextdotjs,
+  SiReactrouter,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { motion } from "framer-motion";
+
+const Skills = () => {
+  const [skills, setSkills] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/skills") // your Express backend endpoint
+      .then((res) => res.json())
+      .then((data) => setSkills(data))
+      .catch((err) => console.error("Error fetching skills data:", err));
+  }, []);
+
+  if (!skills) return <p className="p-10 text-white">Loading...</p>;
+
+  const techIcons = {
+    HTML: <SiHtml5 className="text-orange-500 text-2xl" />,
+    CSS: <SiCss3 className="text-blue-500 text-2xl" />,
+    JavaScript: <SiJavascript className="text-yellow-400 text-2xl" />,
+    React: <FaReact className="text-blue-400 text-2xl" />,
+    "Tailwind CSS": <SiTailwindcss className="text-cyan-400 text-2xl" />,
+    "Framer Motion": <SiFramer className="text-pink-500 text-2xl" />,
+    C: <span className="text-2xl">🔵</span>,
+    "C++": <SiCplusplus className="text-blue-800 text-2xl" />,
+    Python: <FaPython className="text-yellow-400 text-2xl" />,
+    Vite: <SiVite className="text-purple-500 text-2xl" />,
+    "Node.js": <FaNodeJs className="text-green-500 text-2xl" />,
+    "Express.js": <SiExpress className="text-white text-2xl" />,
+    "React Router": <SiReactrouter className="text-red-500 text-2xl" />,
+    "Next.js": <SiNextdotjs className="text-black text-2xl" />,
+    Nodemon: <SiNodemon className="text-green-700 text-2xl" />,
+    MongoDB: <SiMongodb className="text-green-600 text-2xl" />,
+    Mongoose: <SiMongoose className="text-red-500 text-2xl" />,
+    Git: <FaGitAlt className="text-orange-600 text-2xl" />,
+    Github: <FaGithub className="text-black text-2xl" />,
+    Postman: <SiPostman className="text-orange-500 text-2xl" />,
+    "VS Code": <VscVscode className="text-blue-400 text-2xl" />,
+  };
+
+  return (
+    <Element name="skills" className="pt-20">
+      <div>
+        <motion.h3
+          className="m-6 mt-20 mb-6 text-6xl font-bold text-center text-white drop-shadow-[0_0_5px_rgba(0,191,255,0.9)]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          Tech Stack
+        </motion.h3>
+
+        {skills.map((category, index) => (
+          <motion.div
+            key={index}
+            className="mx-4 mt-6 flex justify-between items-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+          >
+            <h4 className="text-2xl text-gray-400 font-semibold mb-2 px-4 py-2 text-center">
+              {category.name}
+            </h4>
+            <motion.section
+              className="flex-1 mt-10"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.05,
+                  },
+                },
+              }}
+            >
+              <ul className="flex flex-2 flex-wrap justify-center gap-4 mb-10">
+                {category.list.map((tech, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-xl shadow text-sm"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  >
+                    {techIcons[tech] || <span className="text-2xl">💻</span>}{" "}
+                    {tech}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.section>
+          </motion.div>
+        ))}
+      </div>
+    </Element>
+  );
+};
+
+export default Skills;
