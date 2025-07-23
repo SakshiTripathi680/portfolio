@@ -30,10 +30,10 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
   const [skills, setSkills] = useState(null);
-
   const baseURL = import.meta.env.VITE_API_BASE_URL;
+
   useEffect(() => {
-    fetch(`${baseURL}/api/skills`) // your Express backend endpoint
+    fetch(`${baseURL}/api/skills`)
       .then((res) => res.json())
       .then((data) => setSkills(data))
       .catch((err) => console.error("Error fetching skills data:", err));
@@ -55,23 +55,23 @@ const Skills = () => {
     "Node.js": <FaNodeJs className="text-green-500 text-2xl" />,
     "Express.js": <SiExpress className="text-white text-2xl" />,
     "React Router": <SiReactrouter className="text-red-500 text-2xl" />,
-    "Next.js": <SiNextdotjs className="text-black text-2xl" />,
+    "Next.js": <SiNextdotjs className="text-white text-2xl" />, // changed from black
     Nodemon: <SiNodemon className="text-green-700 text-2xl" />,
     MongoDB: <SiMongodb className="text-green-600 text-2xl" />,
     Mongoose: <SiMongoose className="text-red-500 text-2xl" />,
     Git: <FaGitAlt className="text-orange-600 text-2xl" />,
-    Github: <FaGithub className="text-black text-2xl" />,
+    Github: <FaGithub className="text-white text-2xl" />, // changed from black
     Postman: <SiPostman className="text-orange-500 text-2xl" />,
     "VS Code": <VscVscode className="text-blue-400 text-2xl" />,
   };
 
   return (
-    <Element name="skills" className="pt-20">
+    <Element name="skills" className="pt-20 px-4 sm:px-6 md:px-12">
       <div>
         <motion.h3
-          className="m-6 mt-20 mb-6 text-6xl font-bold text-center text-white drop-shadow-[0_0_5px_rgba(0,191,255,0.9)]"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white drop-shadow-[0_0_5px_rgba(0,191,255,0.9)] mb-10"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
@@ -81,17 +81,18 @@ const Skills = () => {
         {skills.map((category, index) => (
           <motion.div
             key={index}
-            className="mx-4 mt-6 flex justify-between items-center"
+            className="mb-10"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <h4 className="text-2xl text-gray-400 font-semibold mb-2 px-4 py-2 text-center">
+            <h4 className="text-xl sm:text-2xl text-gray-400 font-semibold mb-4 text-center">
               {category.name}
             </h4>
+
             <motion.section
-              className="flex-1 mt-10"
+              className="flex-1"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -103,11 +104,11 @@ const Skills = () => {
                 },
               }}
             >
-              <ul className="flex flex-2 flex-wrap justify-center gap-4 mb-10">
-                {category.list.map((tech, index) => (
+              <ul className="flex flex-wrap justify-center gap-4">
+                {category.list.map((tech, i) => (
                   <motion.li
-                    key={index}
-                    className="flex items-center gap-2 bg-gray-700 text-white px-4 py-2 rounded-xl shadow text-sm"
+                    key={i}
+                    className="flex items-center gap-2 bg-gray-700 text-white px-3 py-2 rounded-xl shadow text-sm sm:text-base"
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, ease: "easeOut" }}

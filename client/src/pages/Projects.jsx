@@ -10,7 +10,6 @@ const Projects = () => {
     fetch(`${baseURL}/api/projects`)
       .then((res) => res.json())
       .then((data) => {
-        // handle if backend returns { message, projects }
         if (Array.isArray(data)) {
           setProjects(data);
         } else if (Array.isArray(data.projects)) {
@@ -28,27 +27,34 @@ const Projects = () => {
 
   return (
     <Element name="projects" className="pt-20">
-      <div className="min-h-screen bg-black text-white p-6 md:p-10">
-        <h2 className="text-6xl font-bold mt-15 mb-18 text-center drop-shadow-[0_0_5px_rgba(0,191,255,0.9)]">
+      <div className="min-h-screen bg-black text-white px-4 sm:px-6 md:px-10 py-10">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 text-center drop-shadow-[0_0_5px_rgba(0,191,255,0.9)]">
           Projects
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-900 border border-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="bg-gray-900 border border-gray-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
-              {/* Placeholder for image */}
-              <div className="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-xl font-bold text-white">
-                <img src={project.image} alt={project.title} />
+              <div className="w-full h-48 sm:h-52 md:h-56 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <span className="text-xl font-bold text-white">No Image</span>
+                )}
               </div>
 
-              <div className="p-6 flex flex-col gap-4">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
+              <div className="p-4 sm:p-6 flex flex-col gap-3">
+                <h3 className="text-lg sm:text-xl font-semibold">{project.title}</h3>
                 <p className="text-sm text-gray-300">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-2">
                   {project.techStack?.map((tech, i) => (
                     <span
                       key={i}
@@ -64,7 +70,7 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(0,191,255,0.9)] transition-transform hover:scale-105 duration-300 text-sm mt-2 border rounded-full px-3 py-1 w-fit "
+                    className="text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(0,191,255,0.9)] transition-transform hover:scale-105 duration-300 text-sm mt-3 border rounded-full px-3 py-1 w-fit"
                   >
                     View on GitHub
                   </a>

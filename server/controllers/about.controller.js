@@ -21,8 +21,8 @@ export const postAbout = async (req, res) => {
     // This is static data
     const about = new About({
       name: "Sakshi Tripathi",
-      tagline: "Full Stack Developer | FAANG Dreamer",
-      description: "Passionate developer, bug squasher, and code bender learning full stack dev.",
+      tagline: "MERN Stack Developer",
+      description: "Passionate developer, bug squasher, and code bender learning full stack dev and more.",
       techStack: ["React", "Node.js", "MongoDB", "Tailwind CSS", "C++"],
     });
 

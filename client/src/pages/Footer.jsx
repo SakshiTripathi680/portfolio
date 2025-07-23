@@ -4,30 +4,55 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white text-center p-6 mt-10">
-      <p className="font-bold text-lg">Sakshi Tripathi</p>
-      <p className="text-sm text-gray-400">Turning coffee into code ☕💻</p>
+    <footer className="bg-black text-white text-center px-4 py-8 mt-10">
+      <p className="font-bold text-xl sm:text-2xl">Sakshi Tripathi</p>
+      <p className="text-sm sm:text-base text-gray-400 mt-1">
+        Turning coffee into code ☕💻
+      </p>
 
-      <div className="flex justify-center space-x-6 my-4">
-        <a href="https://github.com/SakshiTripathi680" target="_blank" rel="noreferrer">
+      {/* Social Icons */}
+      <div className="flex justify-center flex-wrap gap-6 mt-4">
+        <a
+          href="https://github.com/SakshiTripathi680"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-cyan-400 transition"
+        >
           <FaGithub size={22} />
         </a>
-        <a href="https://www.linkedin.com/in/sakshi-tripathi-523a01212/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.linkedin.com/in/sakshi-tripathi-523a01212/"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-cyan-400 transition"
+        >
           <FaLinkedin size={22} />
         </a>
-        <a href="mailto:sakshitripathi680@gmail.com">
+        <a
+          href="mailto:sakshitripathi680@gmail.com"
+          className="hover:text-cyan-400 transition"
+        >
           <FaEnvelope size={22} />
         </a>
       </div>
 
-      <div className="flex justify-center space-x-4 text-sm text-gray-400">
-        <Link to='about' smooth={true} duration={500} className='cursor-pointer'>About</Link>
-        <Link to='projects' smooth={true} duration={500} className='cursor-pointer'>Projects</Link>
-        <Link to='contact' smooth={true} duration={500} className='cursor-pointer'>Contact</Link>
+      {/* Nav Links */}
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-6 text-sm text-gray-400 mt-4">
+        <Link to="about" smooth={true} duration={500} className="cursor-pointer hover:text-white">
+          About
+        </Link>
+        <Link to="projects" smooth={true} duration={500} className="cursor-pointer hover:text-white">
+          Projects
+        </Link>
+        <Link to="contact" smooth={true} duration={500} className="cursor-pointer hover:text-white">
+          Contact
+        </Link>
       </div>
 
-      <p className="text-xs mt-3 text-gray-500">&copy; {new Date().getFullYear()} Sakshi Tripathi. All rights reserved.</p>
-      <p className="text-xs text-gray-500 italic">Built with ❤️ using MERN Stack, React & Tailwind CSS</p>
+      <p className="text-xs mt-5 text-gray-500">&copy; {new Date().getFullYear()} Sakshi Tripathi. All rights reserved.</p>
+      <p className="text-xs text-gray-500 italic">
+        Built with ❤️ using MERN Stack, React & Tailwind CSS
+      </p>
     </footer>
   );
 };
