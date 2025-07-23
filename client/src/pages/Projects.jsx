@@ -5,8 +5,9 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects")
+    fetch(`${baseURL}/api/projects`)
       .then((res) => res.json())
       .then((data) => {
         // handle if backend returns { message, projects }
@@ -21,7 +22,7 @@ const Projects = () => {
         console.error("Error fetching projects data:", err);
         setLoading(false);
       });
-  }, []);
+  }, [baseURL]);
 
   if (loading) return <p className="p-10 text-white">Loading...</p>;
 

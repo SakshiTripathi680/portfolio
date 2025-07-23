@@ -39,12 +39,13 @@ const EducationCard = ({ edu, index }) => {
 const Education = () => {
   const [education, setEducation] = useState([]);
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
-    fetch("http://localhost:5000/api/education")
+    fetch(`${baseURL}/api/education`)
       .then((res) => res.json())
       .then((data) => setEducation(data))
       .catch((err) => console.error("Error fetching education data:", err));
-  }, []);
+  }, [baseURL]);
 
   if (!education.length) {
     return <p className="p-10 text-white">Loading...</p>;

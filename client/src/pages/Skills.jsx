@@ -31,12 +31,13 @@ import { motion } from "framer-motion";
 const Skills = () => {
   const [skills, setSkills] = useState(null);
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
-    fetch("http://localhost:5000/api/skills") // your Express backend endpoint
+    fetch(`${baseURL}/api/skills`) // your Express backend endpoint
       .then((res) => res.json())
       .then((data) => setSkills(data))
       .catch((err) => console.error("Error fetching skills data:", err));
-  }, []);
+  }, [baseURL]);
 
   if (!skills) return <p className="p-10 text-white">Loading...</p>;
 

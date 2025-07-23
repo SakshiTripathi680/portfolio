@@ -4,12 +4,13 @@ import { Element } from "react-scroll";
 const Experience = () => {
   const [experience, setExperience] = useState([]);
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
-    fetch("http://localhost:5000/api/experience")
+    fetch(`${baseURL}/api/experience`)
       .then((res) => res.json())
       .then((data) => setExperience(data))
       .catch((err) => console.error("Error fetching experience data:", err));
-  }, []);
+  }, [baseURL]);
 
   if (!experience) return <p className="p-10 text-white">Loading...</p>;
 

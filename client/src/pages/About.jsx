@@ -6,12 +6,13 @@ import { Element, Link } from "react-scroll";
 export default function About() {
   const [aboutData, setAboutData] = useState(null);
 
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
   useEffect(() => {
-    fetch("http://localhost:5000/api/about") // your Express backend endpoint
+    fetch(`${baseURL}/api/about`) // your Express backend endpoint
       .then((res) => res.json())
       .then((data) => setAboutData(data))
       .catch((err) => console.error("Error fetching about data:", err));
-  }, []);
+  }, [baseURL]);
 
   if (!aboutData) return <p className="p-10 text-white">Loading...</p>;
 
