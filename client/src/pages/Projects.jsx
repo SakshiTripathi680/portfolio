@@ -46,12 +46,16 @@ const Projects = () => {
                     className="h-full w-full object-cover"
                   />
                 ) : (
-                  <span className="text-xl font-bold text-white">No Image</span>
+                  <span className="text-xl font-bold text-white">
+                    Coming Soon
+                  </span>
                 )}
               </div>
 
               <div className="p-4 sm:p-6 flex flex-col gap-3">
-                <h3 className="text-lg sm:text-xl font-semibold">{project.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold">
+                  {project.title}
+                </h3>
                 <p className="text-sm text-gray-300">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mt-2">
@@ -65,16 +69,22 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {project.githubLink && (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(0,191,255,0.9)] transition-transform hover:scale-105 duration-300 text-sm mt-3 border rounded-full px-3 py-1 w-fit"
-                  >
-                    View on GitHub
-                  </a>
-                )}
+                <div className="flex gap-3 mt-3">
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:drop-shadow-[0_0_5px_rgba(0,191,255,0.9)] transition-transform hover:scale-105 duration-300 text-sm border rounded-full px-3 py-1 w-fit"
+                    >
+                      View on GitHub
+                    </a>
+                  )}
+
+                  {project.demoLink && (
+                    <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="text-black bg-cyan-400 hover:drop-shadow-[0_0_5px_rgba(0,191,255,0.9)] hover:scale-105 duration-300 text-sm border rounded-full px-3 py-1 w-fit ">Live Demo</a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

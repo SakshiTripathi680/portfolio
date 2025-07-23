@@ -50,7 +50,7 @@ const Experience = () => {
                 </div>
 
                 {/* Dot on the line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 border-4 border-white rounded-full z-10 hidden md:block"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyan-400 border-4 border-white rounded-full z-8 hidden md:block"></div>
               </div>
             );
           })}

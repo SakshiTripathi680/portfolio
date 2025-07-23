@@ -45,24 +45,24 @@ const Skills = () => {
     HTML: <SiHtml5 className="text-orange-500 text-2xl" />,
     CSS: <SiCss3 className="text-blue-500 text-2xl" />,
     JavaScript: <SiJavascript className="text-yellow-400 text-2xl" />,
-    React: <FaReact className="text-blue-400 text-2xl" />,
-    "Tailwind CSS": <SiTailwindcss className="text-cyan-400 text-2xl" />,
-    "Framer Motion": <SiFramer className="text-pink-500 text-2xl" />,
     C: <span className="text-2xl">🔵</span>,
     "C++": <SiCplusplus className="text-blue-800 text-2xl" />,
     Python: <FaPython className="text-yellow-400 text-2xl" />,
-    Vite: <SiVite className="text-purple-500 text-2xl" />,
-    "Node.js": <FaNodeJs className="text-green-500 text-2xl" />,
-    "Express.js": <SiExpress className="text-white text-2xl" />,
-    "React Router": <SiReactrouter className="text-red-500 text-2xl" />,
+    React: <FaReact className="text-blue-400 text-2xl" />,
     "Next.js": <SiNextdotjs className="text-white text-2xl" />, // changed from black
-    Nodemon: <SiNodemon className="text-green-700 text-2xl" />,
-    MongoDB: <SiMongodb className="text-green-600 text-2xl" />,
+    "Express.js": <SiExpress className="text-white text-2xl" />,
+    "Tailwind CSS": <SiTailwindcss className="text-cyan-400 text-2xl" />,
+    "Framer Motion": <SiFramer className="text-pink-500 text-2xl" />,
+    "React Router": <SiReactrouter className="text-red-500 text-2xl" />,
     Mongoose: <SiMongoose className="text-red-500 text-2xl" />,
+    Vite: <SiVite className="text-purple-500 text-2xl" />,
+    Nodemon: <SiNodemon className="text-green-700 text-2xl" />,
     Git: <FaGitAlt className="text-orange-600 text-2xl" />,
     Github: <FaGithub className="text-white text-2xl" />, // changed from black
     Postman: <SiPostman className="text-orange-500 text-2xl" />,
     "VS Code": <VscVscode className="text-blue-400 text-2xl" />,
+    MongoDB: <SiMongodb className="text-green-600 text-2xl" />,
+    "Node.js": <FaNodeJs className="text-green-500 text-2xl" />,
   };
 
   return (

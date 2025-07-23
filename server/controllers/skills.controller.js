@@ -18,20 +18,28 @@ export const postSkills = async (req, res) => {
 
         const skills = await Skills.insertMany([
             {
-                name: "Frontend",
-                list: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Framer Motion", "C", "C++", "Python", "Vite"]
+                name: "Programming Languages",
+                list: ["HTML", "CSS", "JavaScript", "C", "C++", "Python"]
             },
             {
-                name: "Backend",
-                list: ["Node.js", "Express.js", "React Router", "Next.js", "Nodemon"]
+                name: "Frameworks",
+                list: ["React", "Next.js", "Express.js", "Tailwind CSS"]
             },
             {
-                name: "Database",
-                list: ["MongoDB", "Mongoose"]
+                name: "Libraries",
+                list: ["Framer Motion","React Router", "Mongoose"]
             },
             {
-                name: "Tools",
-                list: ["Git", "Github", "Postman", "VS Code"]
+                name: "Tools & Utilities",
+                list: ["Vite", "Nodemon", "Git", "Github", "Postman", "VS Code"]
+            },
+            {
+                name: "Databases",
+                list: ["MongoDB"]
+            },
+            {
+                name: "Runtime Environments",
+                list: ["Node.js"]
             }
         ])
         res.status(201).json({message: "Skills created!", skills});

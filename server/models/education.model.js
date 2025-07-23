@@ -5,6 +5,10 @@ const EducationSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    stream:{
+        type: String,
+        required: false
+    },
     institution:{
         type: String,
         required: true

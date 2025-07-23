@@ -17,12 +17,14 @@ export const postEducation = async (req, res) => {
 
     const education = await Education.insertMany([
       {
-        degree: "B.Tech in Electronics And Communication Engineering",
+        degree: "Bachelor of Technology",
+        stream: "Electronics And Communication",
         institution: "Dronacharya Group of Institutions, Greater Noida",
         duration: "2019 - 2023",
       },
       {
-        degree: "",
+        degree: "High School",
+        stream: "PCM",
         institution: "The Mann School, Delhi",
         duration: "2009 - 2019"
       }

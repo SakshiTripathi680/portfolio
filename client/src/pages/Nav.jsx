@@ -14,7 +14,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className='fixed top-0 left-0 z-10 w-full bg-black bg-opacity-80 backdrop-blur-sm text-white'>
+    <nav className='fixed top-0 left-0 z-10 w-full bg-opacity-80 backdrop-blur-sm text-white'>
       <div className='max-w-7xl mx-auto px-4 py-4 flex justify-between items-center'>
         <h1 className='font-bold text-2xl drop-shadow-[0_0_5px_rgba(0,191,255,0.9)]'>
           Sakshi Tripathi

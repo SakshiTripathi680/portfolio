@@ -25,10 +25,10 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="flex md:flex-col text-4xl md:text-5xl font-bold text-center animate-bounce">
-          Hi, I am
-          <span className="block text-6xl sm:text-7xl md:text-8xl drop-shadow-[0_0_5px_rgba(0,191,255,0.9)]">
-            Sakshi
+        <h2 className="text-4xl md:text-5xl font-bold text-center animate-bounce">
+          Hi, I am 
+          <span className="text-6xl sm:text-7xl md:text-8xl drop-shadow-[0_0_5px_rgba(0,191,255,0.9)]">
+            {" "}Sakshi
           </span>
         </h2>
         <p className="mt-4 text-xl md:text-2xl text-center">{aboutData.tagline}</p>
