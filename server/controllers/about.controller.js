@@ -19,7 +19,7 @@ export const postAbout = async (req, res) => {
     // const about = new About(req.data);
 
     // This is static data
-    const about = new About({
+    const about = new About.insertOne({
       name: "Sakshi Tripathi",
       tagline: "MERN Stack Developer",
       description: "Passionate developer, bug squasher, and code bender learning full stack dev and more.",

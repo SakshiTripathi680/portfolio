@@ -21,7 +21,7 @@ const Nav = () => {
         </h1>
 
         {/* Desktop Menu */}
-        <ul className='hidden md:flex space-x-4 font-semibold px-4 py-2 border border-none rounded-3xl bg-gradient-to-r from-blue-500 to-blue-800'>
+        <ul className='hidden md:flex space-x-4 font-semibold px-4 py-2 border border-none rounded-3xl bg-gradient-to-r from-cyan-400 to-cyan-700'>
           <li><Link to='about' smooth={true} duration={500} className='cursor-pointer'>About</Link></li>
           <li><Link to='experience' smooth={true} duration={500} className='cursor-pointer'>Experience</Link></li>
           <li><Link to='education' smooth={true} duration={500} className='cursor-pointer'>Education</Link></li>

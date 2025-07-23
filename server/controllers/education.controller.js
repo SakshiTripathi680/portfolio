@@ -22,7 +22,7 @@ export const postEducation = async (req, res) => {
         duration: "2019 - 2023",
       },
       {
-        degree: "Schooling",
+        degree: "",
         institution: "The Mann School, Delhi",
         duration: "2009 - 2019"
       }
