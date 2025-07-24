@@ -46,7 +46,7 @@ export const postProjects = async (req, res) => {
         demoLink: ""
       },
       {
-        image: "https://sakshitripathi-portfolio.vercel.app/TypyingGameDemo.png",
+        image: "https://sakshitripathi-portfolio.vercel.app/TypingGameDemo.png",
         title: "Typing Speed Game",
         description: "Developed a web-based typing game with real-time feedback, WPM and accuracy tracking, and best score saved via localStorage. Built a fully responsive, cross-device UI for an engaging user experience.",
         techStack: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
@@ -54,7 +54,7 @@ export const postProjects = async (req, res) => {
         demoLink: "https://sakshi-typing-game.netlify.app/"
       },
       {
-        image: "",
+        image: "https://sakshitripathi-portfolio.vercel.app/ToDoDemo.png",
         title: "To-Do List App",
         description: "Built a to-do list application featuring full CRUD operations with persistent local data storage. Implemented reusable components, filtering features, and managed state using React Hooks. Focused on intuitive user experience and clean design to enhance productivity.",
         techStack: ["HTML", "CSS", "JavaScript"],
