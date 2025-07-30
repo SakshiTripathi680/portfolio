@@ -15,7 +15,7 @@ export default function About() {
       .catch((err) => console.error("Error fetching about data:", err));
   }, [baseURL]);
 
-  if (!aboutData) return <p className="p-10 text-white">Loading...</p>;
+  if (!aboutData) return <p className="p-10 text-white">Loading... Kindly wait for a moment.</p>;
 
   return (
     <Element name="about" className="pt-20">
