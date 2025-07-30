@@ -23,7 +23,7 @@ const Projects = () => {
       });
   }, [baseURL]);
 
-  if (!loading) return <p className="p-10 text-white">Loading...</p>;
+  if (loading) return <p className="p-10 text-white">Loading...</p>;
 
   return (
     <Element name="projects" className="pt-20">
